@@ -40,9 +40,9 @@ foooditem_chain = LLMChain(
 if cuisine:
     response = lang.generate_restaurantnames_fooditems(cuisine)
 
-    st.header(response['restaurant_name'])
+    st.header(response['restaurant_name'].strip())
 
-    menu_items = response['menu_items'].split(",")
+    menu_items = response['menu_items'].strip().split(",")
 
     st.write("**Menu Items**")
     for item in menu_items:
